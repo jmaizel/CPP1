@@ -6,7 +6,7 @@
 /*   By: jmaizel <jmaizel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 14:07:38 by jmaizel           #+#    #+#             */
-/*   Updated: 2025/04/11 15:26:53 by jmaizel          ###   ########.fr       */
+/*   Updated: 2025/04/14 18:40:00 by jmaizel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,15 @@ int main(int argc, char **argv)
             std::cout << "Usage: ./program <filename> <s1> <s2>" << std::endl;
         return 1;
     }
-    
-
     std::string file_name = argv[1];
     std::string s1 = argv[2];
     std::string s2 = argv[3];
-    
     std::ifstream infile(file_name.c_str());
     if(!infile.is_open())
     {
         std::cout << "Error: cannot open file " << file_name << std::endl;
         return (1);
     }
-
     std::string outfile_name = file_name + ".replace";
     std::ofstream outfile(outfile_name.c_str());
     if (!outfile.is_open())

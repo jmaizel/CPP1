@@ -6,7 +6,7 @@
 /*   By: jmaizel <jmaizel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 14:08:07 by jmaizel           #+#    #+#             */
-/*   Updated: 2025/04/11 14:08:08 by jmaizel          ###   ########.fr       */
+/*   Updated: 2025/04/14 18:25:19 by jmaizel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,14 @@ Zombie *ZombieHorde(int N, std::string name)
 
 int main(void)
 {
-    int n = 5;  // Nombre de zombies dans la horde
+    int n = 5; 
     std::string zombie_name = "ZombieHorde";
-    
-    // Créer une horde de 5 zombies appelés "ZombieHorde"
     Zombie* horde = ZombieHorde(n, zombie_name);
-    
-    // Faire annoncer chaque zombie
     for (int i = 0; i < n; i++)
     {
         std::cout << "Zombie " << i << " s'annonce: ";
         horde[i].announce();
     }
-    
-    // Libérer la mémoire - TRÈS IMPORTANT d'utiliser delete[]
     delete[] horde;
-    
     return (0);
 }
